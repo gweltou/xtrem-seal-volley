@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/seal_sound_1.wav-f4dd9cf96f6de526d6c979214ab3eff2.sample"
+
+[deps]
+
+source_file="res://ressources/seal_sound_1.wav"
+dest_files=[ "res://.import/seal_sound_1.wav-f4dd9cf96f6de526d6c979214ab3eff2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

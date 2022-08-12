@@ -1,0 +1,453 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://Niveau.gd" type="Script" id=1]
+[ext_resource path="res://Cloud.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ressources/SimpleBreakfast.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://ressources/outline.shader" type="Shader" id=4]
+[ext_resource path="res://ressources/score_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://ressources/bg_sky.png" type="Texture" id=6]
+[ext_resource path="res://ressources/bg_beach.png" type="Texture" id=7]
+[ext_resource path="res://ressources/title.png" type="Texture" id=8]
+[ext_resource path="res://ressources/seal2.png" type="Texture" id=9]
+[ext_resource path="res://ressources/title_splash.png" type="Texture" id=10]
+[ext_resource path="res://ressources/special_splash.png" type="Texture" id=11]
+[ext_resource path="res://ressources/summer_splash.png" type="Texture" id=12]
+[ext_resource path="res://ressources/special.png" type="Texture" id=13]
+[ext_resource path="res://ressources/summer.png" type="Texture" id=14]
+[ext_resource path="res://ressources/cloud_1.png" type="Texture" id=15]
+[ext_resource path="res://ressources/cloud_2.png" type="Texture" id=16]
+[ext_resource path="res://ressources/cloud_6.png" type="Texture" id=17]
+[ext_resource path="res://ressources/cloud_3.png" type="Texture" id=18]
+[ext_resource path="res://ressources/cloud_4.png" type="Texture" id=19]
+[ext_resource path="res://ressources/cloud_5.png" type="Texture" id=20]
+[ext_resource path="res://ressources/head.png" type="Texture" id=21]
+[ext_resource path="res://ressources/flipper.png" type="Texture" id=22]
+[ext_resource path="res://ressources/anim_right_score.tres" type="Animation" id=23]
+[ext_resource path="res://ressources/game_over.wav" type="AudioStream" id=24]
+[ext_resource path="res://ressources/net.png" type="Texture" id=25]
+[ext_resource path="res://ressources/ball.png" type="Texture" id=26]
+
+[sub_resource type="Animation" id=14]
+resource_name = "New Anim"
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TopLayer/LeftScore:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TopLayer/Head:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 504, 700 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TopLayer/FlipperRight:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 648, 670 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TopLayer/FlipperRight:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 55.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("TopLayer/FlipperRight:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TopLayer/Head:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "left_score"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("TopLayer/LeftScore:rect_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TopLayer/Head:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 504, 700 ), Vector2( 504, 528 ), Vector2( 504, 528 ), Vector2( 504, 700 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TopLayer/FlipperRight:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 384, 664 ), Vector2( 376, 560 ), Vector2( 376, 560 ), Vector2( 384, 664 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TopLayer/FlipperRight:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -90.0, -55.0, -80.0, -55.0, -90.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("TopLayer/FlipperRight:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TopLayer/Head:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="CanvasItemMaterial" id=16]
+blend_mode = 4
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 32, 332 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 576, 32 )
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 8.0
+height = 196.0
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 8, 201 )
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 4 )
+shader_param/width = 8.0
+shader_param/outline_color = Color( 1, 0.843137, 0, 0.470588 )
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 4 )
+shader_param/width = 4.0
+shader_param/outline_color = Color( 0.988235, 0.878431, 0, 0.470588 )
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = ExtResource( 4 )
+shader_param/width = 4.0
+shader_param/outline_color = Color( 0.909804, 0.854902, 0, 0.470588 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 40
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="Niveau" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/New Anim" = SubResource( 14 )
+anims/RESET = SubResource( 13 )
+anims/left_score = SubResource( 15 )
+anims/right_score = ExtResource( 23 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sky" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sun" type="Sprite" parent="."]
+modulate = Color( 0.968627, 1, 0, 0.262745 )
+material = SubResource( 16 )
+position = Vector2( 512, 240 )
+scale = Vector2( 0.628788, 0.628788 )
+texture = ExtResource( 26 )
+
+[node name="Clouds" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cloud1" parent="Clouds" instance=ExtResource( 2 )]
+position = Vector2( 712, 152 )
+texture = ExtResource( 16 )
+speed = 0.05
+
+[node name="Cloud2" parent="Clouds" instance=ExtResource( 2 )]
+position = Vector2( 160, 144 )
+texture = ExtResource( 15 )
+speed = 0.06
+
+[node name="Cloud3" parent="Clouds" instance=ExtResource( 2 )]
+position = Vector2( 256, 72 )
+texture = ExtResource( 18 )
+speed = 0.08
+
+[node name="Cloud4" parent="Clouds" instance=ExtResource( 2 )]
+position = Vector2( 760, 56 )
+texture = ExtResource( 19 )
+speed = 0.09
+
+[node name="Cloud5" parent="Clouds" instance=ExtResource( 2 )]
+position = Vector2( 344, 64 )
+texture = ExtResource( 20 )
+
+[node name="Cloud6" parent="Clouds" instance=ExtResource( 2 )]
+position = Vector2( 832, 112 )
+texture = ExtResource( 17 )
+speed = 0.11
+
+[node name="Beach" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Walls" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShapeGauche" type="CollisionShape2D" parent="Walls"]
+position = Vector2( -32, 268 )
+shape = SubResource( 5 )
+
+[node name="CollisionShapeDroit" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1056, 268 )
+shape = SubResource( 5 )
+
+[node name="CollisionShapeCeiling" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 512, -96 )
+shape = SubResource( 1 )
+
+[node name="Ground" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 512, 568 )
+shape = SubResource( 1 )
+
+[node name="Net" type="StaticBody2D" parent="."]
+position = Vector2( 512, 544 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Net"]
+position = Vector2( 0, -108 )
+shape = SubResource( 7 )
+
+[node name="Net" type="Sprite" parent="Net"]
+position = Vector2( -4, -87 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 25 )
+
+[node name="Boundary" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
+position = Vector2( 512, 137 )
+shape = SubResource( 8 )
+
+[node name="TopLayer" type="CanvasLayer" parent="."]
+
+[node name="LeftScore" type="Label" parent="TopLayer"]
+margin_left = 64.0
+margin_top = 16.0
+margin_right = 101.0
+margin_bottom = 125.0
+rect_pivot_offset = Vector2( 20, 40 )
+custom_fonts/font = ExtResource( 5 )
+text = "0"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RightScore" type="Label" parent="TopLayer"]
+margin_left = 920.0
+margin_top = 16.0
+margin_right = 960.0
+margin_bottom = 125.0
+rect_pivot_offset = Vector2( 19, 40 )
+custom_fonts/font = ExtResource( 5 )
+text = "0"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Node2D" parent="TopLayer"]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Seal" type="Sprite" parent="TopLayer/Menu"]
+position = Vector2( 536, 392 )
+rotation = 0.048854
+scale = Vector2( 1.26475, 1.26475 )
+texture = ExtResource( 9 )
+flip_h = true
+
+[node name="TitleSplash" type="Sprite" parent="TopLayer/Menu"]
+position = Vector2( 512, 168 )
+texture = ExtResource( 10 )
+
+[node name="Title" type="Sprite" parent="TopLayer/Menu"]
+material = SubResource( 9 )
+position = Vector2( 494, 153 )
+texture = ExtResource( 8 )
+
+[node name="SummerSplash" type="Sprite" parent="TopLayer/Menu"]
+position = Vector2( 168, 488 )
+texture = ExtResource( 12 )
+
+[node name="Summer" type="Sprite" parent="TopLayer/Menu"]
+material = SubResource( 10 )
+position = Vector2( 912, 36 )
+rotation = -0.156872
+texture = ExtResource( 14 )
+
+[node name="SpecialSplash" type="Sprite" parent="TopLayer/Menu"]
+position = Vector2( 845, 493 )
+texture = ExtResource( 11 )
+
+[node name="Special" type="Sprite" parent="TopLayer/Menu"]
+material = SubResource( 11 )
+position = Vector2( 941, 102 )
+rotation = -0.209717
+texture = ExtResource( 13 )
+
+[node name="MenuPvP" type="Label" parent="TopLayer/Menu"]
+margin_left = 48.0
+margin_top = 488.0
+margin_right = 387.0
+margin_bottom = 579.0
+rect_pivot_offset = Vector2( 168, 40 )
+custom_colors/font_color = Color( 0.94902, 0.784314, 0.137255, 1 )
+custom_fonts/font = SubResource( 12 )
+text = "Player VS Player"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuPvB" type="Label" parent="TopLayer/Menu"]
+margin_left = 592.0
+margin_top = 488.0
+margin_right = 976.0
+margin_bottom = 579.0
+rect_pivot_offset = Vector2( 192, 40 )
+custom_colors/font_color = Color( 0.94902, 0.784314, 0.137255, 1 )
+custom_fonts/font = SubResource( 12 )
+text = "Player VS Bot chan"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FlipperRight" type="Sprite" parent="TopLayer"]
+position = Vector2( 648, 670 )
+rotation = 0.959931
+texture = ExtResource( 22 )
+flip_h = true
+
+[node name="Head" type="Sprite" parent="TopLayer"]
+position = Vector2( 504, 700 )
+texture = ExtResource( 21 )
+
+[node name="GameOverPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
