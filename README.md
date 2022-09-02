@@ -1,5 +1,5 @@
 # xtrem-seal-volley
-A blobby volley clone make with godot
+A blobby volley clone made with godot
 
 ![Game screenshot](/ressources/xtrem_seal_volley.png)
 
